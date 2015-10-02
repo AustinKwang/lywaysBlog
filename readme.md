@@ -11,33 +11,27 @@ The blog system is build by [Hexo](http://hexo.io/)! you can get document from [
 2. step into hexo project root directory 
     如： D:\Dev_Env\Project\GitProject\hexo
 3. Create a new post(a new blog)
-
-``` bash
-$ hexo new "My New Post"
-```
-
-More info: [Writing](http://hexo.io/docs/writing.html)
+    ``` bash
+    $ hexo new "My New Post"
+    ```
+    More info: [Writing](http://hexo.io/docs/writing.html)
 
 4. Run server to check
-
-``` bash
-$ hexo server
-```
-
-More info: [Server](http://hexo.io/docs/server.html)
+    ``` bash
+    $ hexo server
+    ```
+    More info: [Server](http://hexo.io/docs/server.html)
 
 5. Generate static files
 
-``` bash
-$ hexo generate
-```
+    ``` bash
+    $ hexo generate
+    ```
 
-More info: [Generating](http://hexo.io/docs/generating.html)
+    More info: [Generating](http://hexo.io/docs/generating.html)
 
 6. Deploy to remote sites, in this will automatic deploy to github.
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](http://hexo.io/docs/deployment.html)
+    ``` bash
+    $ hexo deploy
+    ```
+    More info: [Deployment](http://hexo.io/docs/deployment.html)
