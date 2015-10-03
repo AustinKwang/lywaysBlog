@@ -1,4 +1,8 @@
-title: Add a new Blob
+title: Add a new Blog
+categories:
+- Hexo Blog
+tags:
+- Hexo
 ---
 The blog system is build by [Hexo](http://hexo.io/)! you can get document from [documentation](http://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](http://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 

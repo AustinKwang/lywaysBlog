@@ -4,11 +4,11 @@
 
 # Site
 title: Austin's blogs
-subtitle: the records of austin
+subtitle: The records of austin
 description:
 author: Austin 
-language:
-timezone:
+language: zh-CN
+# timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -63,8 +63,10 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: landscape
-
+#theme: landscape
+theme: jacman
+stylus:
+	compress: true
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
