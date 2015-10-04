@@ -5,7 +5,7 @@ tags:
 - Tools
 ---
 ## 在windows中使用LInux的命令。可以通过如下方法实现
-1. 使用MinGW以及其中的Linux命令套件
+### 1. 使用MinGW以及其中的Linux命令套件
     1. 介绍
         MinGW：Windows环境提供完整的开源编程工具集， 且不依赖于第三方的C运行库(DLLs), 只是一套最小化的GNU开发环境集合，并不提供GNU软件的运行环境，如需要运行环境，可以使用<a href="http://www.cygwin.com/">Cygwin</a>或者
         MSYS：是一套GUN工具集， 如 bash,make,gawk以及grep， 允许你通过传统的UNIX工具来构建应用， 其目标在于补充MinGW和CMD shell的不足，作为cmd.exe的替换.需要与MinGW同时使用
@@ -29,5 +29,8 @@ tags:
                 $ set MSYSCON=mintty.exe
                 ```
 
-2. 使用Git bash
+### 2. 使用Git bash
     安装了git，就可以直接只用git-bash，git-bash也是基于MinGW实现的。
+
+### 3. 使用cmder
+    1. 下载以及安装教程：<a href="https://github.com/cmderdev/cmder">安装</a>
