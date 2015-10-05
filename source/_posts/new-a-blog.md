@@ -1,4 +1,5 @@
 title: Add a new Blog
+date: 2015-10-03
 categories:
 - Hexo Blog
 tags:
