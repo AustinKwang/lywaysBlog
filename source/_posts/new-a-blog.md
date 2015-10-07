@@ -13,9 +13,9 @@ The blog system is build by [Hexo](http://hexo.io/)! you can get document from [
 	如： D:\Dev_Env\Project\GitProject\hexo
 ### Create a new post(a new blog)
 
-    ``` bash
-    $ hexo new "My New Post"
-    ```
+``` bash
+$ hexo new "My New Post"
+```
 
 More info: [Writing](http://hexo.io/docs/writing.html)
 
