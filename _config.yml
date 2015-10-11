@@ -4,7 +4,7 @@
 
 # Site
 title: Austin's blogs
-subtitle: The records of austin
+subtitle: Just Do it.
 description:
 author: Austin 
 language: zh-CN
@@ -20,6 +20,7 @@ permalink_defaults:
 # Directory
 source_dir: source
 public_dir: public
+#public_dir: D:\Dev_Env\Project\GitProject\AustinKwang.github.io
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
