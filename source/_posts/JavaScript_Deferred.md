@@ -7,9 +7,10 @@ tags:
 ---
 
 ### 一. 概念
-1. Promise表示一个异步操作的最终结果
-2. Deferred：英文意思是“延迟”，也就是延迟到未来某个点在执行。在传统的Ajax请求中， 放请求回调时，存在着两个缺陷：`不管成功或者失败，都只能绑定一个回调函数`和和 ·`立即执行`。可以将我们的一些代码用于延迟执行。
-
+1. Promise， 为Deferred的超类， 表示一个异步操作的最终结果，promise无resolve()方法，只用来定义绑定回调函数， 在Ajax请求中，返回的Promise对象
+2. Deferred：英文意思是“延迟”，也就是延迟到未来某个点在执行。在传统的Ajax请求中， 放请求回调时，存在着两个缺陷：`不管成功或者失败，都只能绑定一个回调函数`和和 ·`立即执行`。可以将我们的一些代码用于延迟执行。首先我们需要绑定回调函数，然后通过如下方法来决定最终结果
+  testDeffed.resolve(参数); //执行done
+    testDeffed.reject(参数); //执行fail
 ### 二. 使用
 常用的Promise为jquery的Promise, 可以参考JQuery API文档：[http://api.jquery.com/category/deferred-object/]
 我们在使用JQuery的Ajax操作的时候写法如下：
@@ -29,6 +30,7 @@ $.ajax({
 success与error方法我们都只能绑定一个回调函数。
 在有Deferred之后， 我们可以按照如下方式来写：
 ```javascript
+//返回的是promise对象， promise无resolve()方法，只用来定义绑定回调函数
 var promise = $.ajax({
       url:'index.html',
         type:'GET'
