@@ -1,4 +1,4 @@
-title: Add a new Blog
+title: Hexo Blog使用
 date: 2015-10-03
 categories:
 - Hexo Blog
