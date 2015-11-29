@@ -1,3 +1,10 @@
+title: RequireJs使用
+date: 2015-11-20
+categories:
+- Front-end
+tags:
+- 前端
+----------------------------
 RequireJs
 首先加载下载require.js
 然后开始异步加载data-main指定的js

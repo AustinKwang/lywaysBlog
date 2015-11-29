@@ -1,4 +1,4 @@
-title: 使用 npm + grunt初始化(Angular + express)项目
+title: Node全端开发脚手架介绍
 date: 2015-11-4
 categories:
 - Front-end
