@@ -1,7 +1,7 @@
 title: Node全端开发脚手架介绍
 date: 2015-11-4
 categories:
-- Front-end
+- 前端
 tags:
 - 前端
 ---
