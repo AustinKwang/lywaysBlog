@@ -1,7 +1,7 @@
 title: NPM与Bower的区别
 date: 2015-11-04
 categories:
-- Front-end
+- 前端
 tags:
 - 前端
 ---

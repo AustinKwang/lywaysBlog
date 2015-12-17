@@ -1,7 +1,7 @@
 title: RequireJs使用
 date: 2015-11-20
 categories:
-- Front-end
+- 前端
 tags:
 - 前端
 ----------------------------

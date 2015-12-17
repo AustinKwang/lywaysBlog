@@ -1,9 +1,9 @@
 title: Deferred与Promise
 date: 2015-10-25
 categories:
-- JavaScript
+- 前端
 tags:
-- JavaScript
+- 前端
 ---
 
 ### 一. 概念
