@@ -1,5 +1,6 @@
 title: Spring MVC的路劲搜索问题
 date: 2015-12-23
+categories:
 - Java编程
 tags:
 - Java
