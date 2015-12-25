@@ -2,6 +2,7 @@
 menu:
   # 首页: /language
   文章: /archives
+  网址记录: /2015/12/09/网址记录/
   关于: /about
 ## you can create `tags` and `categories` folders in `../source`.
 ## And create a `index.md` file in each of them.
