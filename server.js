@@ -27,18 +27,17 @@ app.use(serveStatic(__dirname));
 
 app.use(function indexMiddleware(req, res, next){
 	var url = decodeURIComponent(req.url);
-	console.log(url);
+	console.log("/---->" + url);
  	if(url === '/'){
 		req.url = url + 'index/index.html';
-		console.log(req.url);
+		console.log("re" + req.url);
 		res.statusCode = 302;
 	 	res.setHeader('Location', url + 'index/');
 		res.end('Redirecting');
  	}
  	next();
 });
-
-app.use('/public', function middleware1(req, res, next) {
+app.use('/blog', function middleware1(req, res, next) {
   // req.url starts with "/foo" 
   var url = decodeURIComponent(req.url);
   var extname = pathFn.extname(url);
@@ -56,4 +55,5 @@ app.use(function onerror(err, req, res, next) {
   // an error occurred! 
 });
 //create node.js http server and listen on port 
-http.createServer(app).listen(3000)
+http.createServer(app).listen(80);
+console.log('server is start');
