@@ -27,10 +27,10 @@ app.use(serveStatic(__dirname));
 
 app.use(function indexMiddleware(req, res, next){
 	var url = decodeURIComponent(req.url);
-	console.log("/---->" + url);
+	// console.log("/---->" + url);
  	if(url === '/'){
 		req.url = url + 'index/index.html';
-		console.log("re" + req.url);
+		// console.log("re" + req.url);
 		res.statusCode = 302;
 	 	res.setHeader('Location', url + 'index/');
 		res.end('Redirecting');
