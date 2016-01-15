@@ -1,9 +1,9 @@
 title: Windows下使用GUN(Linux)命令行
 date: 2015-10-04
 categories:
-- 工具
+- 系统工具
 tags:
-- 工具
+- 系统工具
 ---
 ## 在windows中使用LInux的命令。可以通过如下方法实现
 ### 1. 使用MinGW以及其中的Linux命令套件
