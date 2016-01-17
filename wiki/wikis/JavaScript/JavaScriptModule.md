@@ -1,4 +1,4 @@
-###JavaScrip模块化编程
+### JavaScrip模块化编程
 在JavaScript中原来是不支持模块化编程的, 但是可以采用以下几种方式来支持模块化
 ,也可参考[JavaScript Module Pattern: In-Depth](http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html)如下:
 

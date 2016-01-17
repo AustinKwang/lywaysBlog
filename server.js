@@ -1,8 +1,13 @@
-var connect = require('connect');
-var http = require('http');
-var pathFn = require('path');
-var serveStatic = require('serve-static');
-var app = connect();
+var connect = require('connect'),
+http = require('http'),
+pathFn = require('path'),
+serveStatic = require('serve-static'),
+Remarkable = require('remarkable'),
+file = require('fs'),
+path = require('path'),
+utlParser = require('url'),
+md = new Remarkable('full'),
+app = connect();
  
 // gzip/deflate outgoing responses 
 // var compression = require('compression')
@@ -23,11 +28,8 @@ var app = connect();
 //   res.end('Hello from Connect!\n');
 // })
 
-app.use(serveStatic(__dirname));
-
-app.use(function indexMiddleware(req, res, next){
+app.use('/', function indexMiddleware(req, res, next){
 	var url = decodeURIComponent(req.url);
-	// console.log("/---->" + url);
  	if(url === '/'){
 		req.url = url + 'index/index.html';
 		// console.log("re" + req.url);
@@ -43,17 +45,63 @@ app.use('/blog', function middleware1(req, res, next) {
   var extname = pathFn.extname(url);
   if(!extname){
     req.url = url + '/index.html';
-    res.statusCode = 302;
+    res.statusCode = 200;
 	res.setHeader('Location', url);
-	res.end('Redirecting');
   }
   next();
  
 });
 
+app.use('/wiki', function middleware1(req, res, next) {
+  // req.url starts with "/foo" 
+  var url = decodeURIComponent(req.url);
+  if(url === '/'){
+  	next(); 
+  }else{
+  		var dir =  path.join(__dirname, '/wiki/' + utlParser.parse(req.url).pathname);
+		console.log('lp->' +dir);
+		var stats = file.lstatSync(dir);
+		console.log(stats);
+		if(stats.isFile()){
+	  		 console.log('is isFile');
+			// if(url.indexOf('sidebar') > 0){
+		  	file.readFile(dir, 'utf-8',function (err, data) {
+			    if (err) {
+			    	console.log(err);
+			    	next();
+			    	// /throw err;
+			    }else{
+			    	console.log(data);
+			    	// res.end(toc(data));
+			    	res.end(md.render(data));
+			    }
+			});
+	  		// }
+	  	}else if(stats.isDirectory()){
+	  		 console.log('is Dir');
+	  		dir += '/sidebar.md';
+	  		file.readFile(dir, 'utf-8',function (err, data) {
+				    if (err) {
+				    	console.log(err);
+				    	next();
+				    	// /throw err;
+				    }else{
+				    	// console.log(data);				
+				    	res.end(md.render(data));
+				    }
+				});
+	  	} else{
+		  	next();
+		}
+  }
+  
+
+});
+app.use(serveStatic(__dirname));
+
 app.use(function onerror(err, req, res, next) {
   // an error occurred! 
 });
 //create node.js http server and listen on port 
-http.createServer(app).listen(80);
-console.log('server is start');
+http.createServer(app).listen(3000);
+console.log('server is start at port 3000');
