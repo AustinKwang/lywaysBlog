@@ -1,0 +1,1 @@
+[Ubuntu安装](installUbuntu.md)

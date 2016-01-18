@@ -57,48 +57,37 @@ app.use('/wiki', function middleware1(req, res, next) {
   var url = decodeURIComponent(req.url);
   if(url === '/'){
   	next(); 
-  }else{
+  }else if(url.indexOf('.md') > 0){
   		var dir =  path.join(__dirname, '/wiki/' + utlParser.parse(req.url).pathname);
 		console.log('lp->' +dir);
 		var stats = file.lstatSync(dir);
 		console.log(stats);
-		if(stats.isFile()){
-	  		 console.log('is isFile');
-			// if(url.indexOf('sidebar') > 0){
-		  	file.readFile(dir, 'utf-8',function (err, data) {
-			    if (err) {
-			    	console.log(err);
-			    	next();
-			    	// /throw err;
-			    }else{
-			    	console.log(data);
-			    	// res.end(toc(data));
-			    	res.end(md.render(data));
-			    }
-			});
-	  		// }
-	  	}else if(stats.isDirectory()){
+		if(stats.isDirectory()){
 	  		 console.log('is Dir');
 	  		dir += '/sidebar.md';
-	  		file.readFile(dir, 'utf-8',function (err, data) {
-				    if (err) {
-				    	console.log(err);
-				    	next();
-				    	// /throw err;
-				    }else{
-				    	// console.log(data);				
-				    	res.end(md.render(data));
-				    }
-				});
-	  	} else{
-		  	next();
-		}
+	  	}
+	  	file.readFile(dir, 'utf-8',function (err, data) {
+		  if (err) {
+			  console.log(err);
+			  next();
+			  // /throw err;
+		  }else{
+			  // console.log(data);
+			  res.end(md.render(data));
+		  }
+	  	});
+  }else{
+	  next();
   }
   
 
 });
 app.use(serveStatic(__dirname));
 
+app.use(function onerror(req, res, next) {
+	res.statusCode = 404;
+	res.end('page not found');
+});
 app.use(function onerror(err, req, res, next) {
   // an error occurred! 
 });

@@ -1,3 +1,5 @@
 ### Wiki目录
-[JavaScript](wikis/javascript)
+[JavaScript](wikis/JavaScript)
 [HTTP](wikis/http)
+[Angular](wikis/angular)
+[Linux](wikis/Linux)
