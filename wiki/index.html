@@ -16,38 +16,72 @@
     <style type="text/css">
     html,body{
         height: 100%;
+        font-size: 120%;
     }
+    body{
+        color: #333;
+        font-family: Verdana, Arial;
+        font-size: 0.8rem;
+    }
+    .header {
+        border-bottom: 1px solid #DCD5D5;
+    }
+
     .header .site-map .list-3{
         border-bottom: 2px solid gray;
     }
 
     .wiki-container{
+        /*position: fixed;
+        top: 90px;*/
         min-height: 100%;
         margin-top: 90px;
+        overflow-x: hidden;
     }
     .menu{
         position: fixed;
+        width:250px;
         height: 100%;
+        border-right: 1px solid #BBB;
+        box-shadow: 0 0 40px #CCC;
+        -webkit-box-shadow: 0 0 40px #CCC;
+        -moz-box-shadow: 0 0 40px #CCC;
     }
     .sidebar {
         height: 100%;
         margin: 10px 20px;
-    }
+        overflow-y: scroll;
+       /* padding-left: 25px;*/
 
+    }
+    .sidebar ol{
+        padding-left: 25px;
+    }
     .sidebar p {
         font-size: 16px;
     }
 
-    .sidebar a{
+    #sidebar a:visited, #sidebar a:link {
         display: block;
+        color: #4682BE;
+        text-decoration: none;
     }
+    a {
+        background: transparent;
+    }
+
     .wiki-container .content{
-        width: 80%;
-        border: 1px solid;
+    /*    width: 80%;
+        border: 1px solid;*/
         border-bottom: none;
         height: 100%;
-        margin-left: 20%;
+        margin-left: 265px;
+        font-size: 0.8rem;
+        line-height: 1.3rem;
         background:none;
+        padding: 10px 10px 150px 7px;
+        width: 100%;
+        overflow: auto;
     }
 </style>
     <link rel="stylesheet" type="text/css" href="../index/style.css">
