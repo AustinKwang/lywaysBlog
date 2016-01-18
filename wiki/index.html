@@ -83,6 +83,26 @@
         width: 100%;
         overflow: auto;
     }
+
+    .go-to-top{
+        position: fixed;
+        top: 100px;
+        z-index: 100;
+        color: #FFF;
+        background-color: gray;
+        right: 20px;
+        width: 50px;
+        height: 20px;
+        border-radius: 5px;
+        line-height: 20px;
+        text-align: center;
+
+    }
+    .go-to-top:hover{
+        background-color: black;
+        cursor:pointer;
+    }
+
 </style>
     <link rel="stylesheet" type="text/css" href="../index/style.css">
 </head>
@@ -119,11 +139,21 @@
         </div>
     </div>
 
+    <div class="go-to-top" id="goToTop">
+        <span>Top</span>
+    </div>
+
     <script src="//cdn.bootcss.com/jquery/3.0.0-beta1/jquery.min.js"></script>
     <script type="text/javascript">
         var data = {};
         window.addEventListener("hashchange", function(){
             router();
+        });
+        $('#goToTop').on('click', function(e){
+            if(e) e.preventDefault();
+            $('html body').animate({
+                scrollTop: 0
+            }, 200);
         });
         function router(){
             var url = window.location.hash.replace(/#\//, '');
