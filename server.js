@@ -54,19 +54,21 @@ app.use('/blog', function middleware1(req, res, next) {
 
 app.use('/wiki', function middleware1(req, res, next) {
   // req.url starts with "/foo" 
-  var url = decodeURIComponent(req.url);
-  if(url === '/'){
-  	next(); 
-  }else if(url.indexOf('.md') > 0){
-  		var dir =  path.join(__dirname, '/wiki/' + utlParser.parse(req.url).pathname);
+	var url = decodeURIComponent(req.url);
+		if(url === '/' || url.indexOf('.md') < 0){
+		next();
+		return;
+	}
+	if(url.indexOf('.md') > 0){
+		var dir =  path.join(__dirname, '/wiki/' + utlParser.parse(req.url).pathname);
 		console.log('lp->' +dir);
 		var stats = file.lstatSync(dir);
 		console.log(stats);
 		if(stats.isDirectory()){
-	  		 console.log('is Dir');
-	  		dir += '/sidebar.md';
-	  	}
-	  	file.readFile(dir, 'utf-8',function (err, data) {
+			 console.log('is Dir');
+			dir += '/sidebar.md';
+		}
+		file.readFile(dir, 'utf-8',function (err, data) {
 		  if (err) {
 			  console.log(err);
 			  next();
@@ -75,12 +77,9 @@ app.use('/wiki', function middleware1(req, res, next) {
 			  // console.log(data);
 			  res.end(md.render(data));
 		  }
-	  	});
-  }else{
-	  next();
-  }
-  
-
+		});
+		return;
+	}
 });
 app.use(serveStatic(__dirname));
 
